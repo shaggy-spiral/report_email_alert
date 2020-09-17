@@ -82,8 +82,8 @@ def sendit():
         server.quit()
 
 # Frequência de envio do email
-schedule.every(10).seconds.do(sendit)
+schedule.every(10).minutes.do(sendit)
 
 while 1:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(60)¶
