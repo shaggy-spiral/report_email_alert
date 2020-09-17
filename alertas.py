@@ -86,4 +86,4 @@ schedule.every(10).minutes.do(sendit)
 
 while 1:
     schedule.run_pending()
-    time.sleep(60)¶
+    time.sleep(60)
