@@ -21,12 +21,12 @@ def cursor2html(list2d):
 def sendit():
     # Ligação à base de dados e execução de uma query
     conn = pyodbc.connect('Driver={SQL Server};' 
-                          'Server=DESKTOP-ILGEKKB\SQLEXPRESS;'
-                          'Database=redinsp;'
+                          'Server=<my_server/instance>;'
+                          'Database=<my_database>;'
                           'Trusted_Connection=yes;')
 
     cursor = conn.cursor()
-    sql_query = "SELECT no AS [N°], nome AS [NOME], SUM(etotal) AS [Valor] FROM ft (NOLOCK) WHERE ft.ndoc = 1 AND pdata <= GETDATE() GROUP BY no, nome ORDER BY [Valor] DESC"
+    sql_query = "<my_SQL_query>"
     cursor.execute(sql_query)
 
     # Converte o cursor num array 2d
@@ -40,29 +40,29 @@ def sendit():
     mail_table = cursor2html(rows)
 
     # Dados ligação SMTP
-    smtp_server = "smtp.gmail.com"
+    smtp_server = "<SMTP_server>"
     port = 587
-    password = "bifinhoscomchampignons"
-    sender_email = "tsobral.i9biz@gmail.com"
-    dest_email = "tiago.sobral@i9.business"
+    password = "<SMTP_password>"
+    sender_email = ""
+    dest_email = ""
     msg_email = str(mail_table)
     context = ssl.create_default_context()
 
     # Dados do Email a ser enviado
     msg = EmailMessage() 
-    msg['Subject'] = "Extrato dívida de clientes. Dia " + str(datetime.strftime(datetime.now(), '%d-%m-%Y'))
+    msg['Subject'] = "<Assunto a mencionar>. Dia " + str(datetime.strftime(datetime.now(), '%d-%m-%Y'))
     msg['From'] = sender_email
     msg['To'] = dest_email
     msg.set_type('text/html')
-    msg_email = "<b>Valores vencidos por cliente</b>" + msg_email
+    msg_email = "<b>Título email</b>" + msg_email
     msg.set_content(msg_email, subtype="html")
     server = smtplib.SMTP(smtp_server,port)
 
     # Envio do email
     try:    
-        server.ehlo() # Can be omitted
+        #server.ehlo()
         server.starttls(context=context) # Secure the connection
-        server.ehlo() # Can be omitted
+        #server.ehlo()
         server.login(sender_email, password)
         #server.sendmail(sender_email, dest_email, msg_email)
         server.send_message(msg)

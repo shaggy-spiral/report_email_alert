@@ -1,0 +1,7 @@
+[2020-09-17 17:57:32.247157] OK: Enviado para tiago.sobral@i9.business (Extrato dívida de clientes. Dia 17-09-2020)
+[2020-09-17 18:07:35.206244] OK: Enviado para tiago.sobral@i9.business (Extrato dívida de clientes. Dia 17-09-2020)
+[2020-09-17 18:17:37.821093] OK: Enviado para tiago.sobral@i9.business (Extrato dívida de clientes. Dia 17-09-2020)
+[2020-09-17 18:27:40.434329] OK: Enviado para tiago.sobral@i9.business (Extrato dívida de clientes. Dia 17-09-2020)
+[2020-09-17 18:37:42.999705] OK: Enviado para tiago.sobral@i9.business (Extrato dívida de clientes. Dia 17-09-2020)
+[2020-09-17 18:47:45.828181] OK: Enviado para tiago.sobral@i9.business (Extrato dívida de clientes. Dia 17-09-2020)
+[2020-10-13 17:16:01.971292] OK: Enviado para tiago.sobral@i9.business (Extrato dívida de clientes. Dia 13-10-2020)
